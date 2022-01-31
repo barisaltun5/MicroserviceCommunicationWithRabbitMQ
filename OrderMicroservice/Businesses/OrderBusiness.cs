@@ -32,7 +32,9 @@ namespace OrderMicroservice.Businesses
                 {
                     return ResponseIsFailed("Error", null, null);
                 }
-                eventBus.CreateOrderMessage(result);
+                var response = eventBus.CreateOrderMessage(result);
+                if (!response)
+                    return ResponseIsFailed("Error", null, null);
 
                 return ResponseIsSuccess(result);
             }
@@ -47,13 +49,13 @@ namespace OrderMicroservice.Businesses
         {
             try
             {
-               var result = _orderRepository.UpdateOrder(orderRequestModel);
-               return ResponseIsSuccess(result);
+                var result = _orderRepository.UpdateOrder(orderRequestModel);
+                return ResponseIsSuccess(result);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 _logger.Error(ex, ex.Message + " " + ex.InnerException);
-                return ResponseIsFailed("Error",null,null);
+                return ResponseIsFailed("Error", null, null);
             }
         }
     }

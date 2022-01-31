@@ -32,8 +32,11 @@ namespace PaymentMicroservice.Businesses
                 {
                     return ResponseIsFailed("Error", null, null);
                 }
-                eventBus.CreatePaymentMessage(result);
-                    return ResponseIsSuccess(result);
+                var response = eventBus.CreatePaymentMessage(result);
+                if (!response)
+                    return ResponseIsFailed("Error", null, null);
+
+                return ResponseIsSuccess(result);
             }
             catch (Exception ex)
             {

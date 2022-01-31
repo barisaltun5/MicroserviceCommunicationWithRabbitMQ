@@ -10,6 +10,6 @@ namespace PaymentMicroservice.Contracts.RabbitMQ
     interface IEventBusRabbitMQ
     {
         IModel CreateConsumerChannel();
-        void CreatePaymentMessage(PaymentResponseModel model);
+        bool CreatePaymentMessage(PaymentResponseModel model);
     }
 }

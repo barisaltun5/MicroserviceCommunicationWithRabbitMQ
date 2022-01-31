@@ -69,7 +69,7 @@ namespace PaymentMicroservice.Services
             {
             }
         }
-        public void CreatePaymentMessage(PaymentResponseModel model)
+        public bool CreatePaymentMessage(PaymentResponseModel model)
         {
             try
             {
@@ -89,9 +89,11 @@ namespace PaymentMicroservice.Services
                                      routingKey: "payment",
                                      basicProperties: null,
                                      body: body);
+                return true;
             }
             catch (Exception ex)
             {
+                return false;
             }
         }
     }

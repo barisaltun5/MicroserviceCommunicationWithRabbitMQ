@@ -10,6 +10,6 @@ namespace OrderMicroservice.Contracts.RabbitMQ
     interface IEventBusRabbitMQ
     {
         IModel CreateConsumerChannel();
-        void CreateOrderMessage(OrderResponseModel model);
+        bool CreateOrderMessage(OrderResponseModel model);
     }
 }

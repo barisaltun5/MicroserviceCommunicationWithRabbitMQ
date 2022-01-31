@@ -65,7 +65,7 @@ namespace OrderMicroservice.Services.RabbitMQ
             }
 
         }
-        public void CreateOrderMessage(OrderResponseModel model)
+        public bool CreateOrderMessage(OrderResponseModel model)
         {
             try
             {
@@ -85,9 +85,11 @@ namespace OrderMicroservice.Services.RabbitMQ
                                      routingKey: "order",
                                      basicProperties: null,
                                      body: body);
+                return true;
             }
             catch(Exception ex)
             {
+                return false;
             }
         }
     }
