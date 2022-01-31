@@ -30,7 +30,3 @@ Two microservices communicating with RabbitMQ..
 - Scenario should be expanded
 - A hosted service should be created for the consumer
 
-# Screenshot  🖥
-
-
-
