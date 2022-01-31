@@ -8,7 +8,7 @@ services:
       dockerfile: OrderMicroservice/Dockerfile
     environment:
      - ASPNETCORE_ENVIRONMENT=Development
-     - DB_CONNECTION_STRING=Server=192.168.1.28,1432;Database=OrderDB;User Id=sa;Password=Barisaltun508*;Trusted_Connection=False;MultipleActiveResultSets=true
+     - DB_CONNECTION_STRING=Server=192.168.1.29,1432;Database=OrderDB;User Id=sa;Password=Barisaltun508*;Trusted_Connection=False;MultipleActiveResultSets=true
     ports:
       - "5101:80"
     depends_on: 
@@ -22,7 +22,7 @@ services:
       dockerfile: PaymentMicroservice/Dockerfile
     environment:
      - ASPNETCORE_ENVIRONMENT=Development
-     - DB_CONNECTION_STRING=Server=192.168.1.28,1432;Database=PaymentDB;User Id=sa;Password=Barisaltun508*;Trusted_Connection=False;MultipleActiveResultSets=true
+     - DB_CONNECTION_STRING=Server=192.168.1.29,1432;Database=PaymentDB;User Id=sa;Password=Barisaltun508*;Trusted_Connection=False;MultipleActiveResultSets=true
     ports:
       - "5102:80"
     depends_on: 
