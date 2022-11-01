@@ -5,7 +5,6 @@ Two microservices communicating with RabbitMQ..
 
 # Why 😏
 
-- Challanging about CashOnLedger
 - To challange myself
 - To have a better carrier opportunities
 
